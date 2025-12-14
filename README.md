@@ -10,15 +10,15 @@
 
 ## 🎯 Ringkasan Proyek
 
-Ini adalah implementasi *backend* berbasis **REST API** untuk Sistem Pelaporan Prestasi Mahasiswa. [cite_start]Aplikasi ini dirancang untuk memungkinkan mahasiswa melaporkan prestasi, dosen wali memverifikasi, dan admin mengelola sistem secara keseluruhan[cite: 6].
+Ini adalah implementasi *backend* berbasis **REST API** untuk Sistem Pelaporan Prestasi Mahasiswa. Aplikasi ini dirancang untuk memungkinkan mahasiswa melaporkan prestasi, dosen wali memverifikasi, dan admin mengelola sistem secara keseluruhan.
 
 Sistem ini menggunakan arsitektur **Dual Database** untuk mengelola:
-1.  [cite_start]**PostgreSQL**: Untuk data relasional, pengguna, dan Role-Based Access Control (RBAC)[cite: 34].
-2.  [cite_start]**MongoDB**: Untuk detail prestasi dinamis (fleksibel *field*)[cite: 106].
+1.  **PostgreSQL**: Untuk data relasional, pengguna, dan Role-Based Access Control (RBAC).
+2.  **MongoDB**: Untuk detail prestasi dinamis (fleksibel *field*).
 
 ### 🔒 Fitur Keamanan Kunci
-* [cite_start]**Autentikasi & Otorisasi**: Menggunakan **JWT** dan **RBAC**[cite: 160].
-* [cite_start]**Workflow Status**: Mendukung alur status `'draft'`, `'submitted'`, `'verified'`, dan `'rejected'`[cite: 96].
+* **Autentikasi & Otorisasi**: Menggunakan **JWT** dan **RBAC**.
+* **Workflow Status**: Mendukung alur status `'draft'`, `'submitted'`, `'verified'`, dan `'rejected'`.
 
 ---
 
@@ -26,9 +26,9 @@ Sistem ini menggunakan arsitektur **Dual Database** untuk mengelola:
 
 | Role | Deskripsi | Hak Akses Utama |
 | :--- | :--- | :--- |
-| **Mahasiswa** | Pelapor prestasi | [cite_start]**Create**, *Read*, *Update* prestasi sendiri[cite: 30]. |
-| **Dosen Wali** | Verifikator prestasi | [cite_start]*Read* dan **Verify** prestasi mahasiswa bimbingannya[cite: 30]. |
-| **Admin** | Pengelola sistem | [cite_start]*Full access* ke semua fitur[cite: 30]. |
+| **Mahasiswa** | Pelapor prestasi | **Create**, *Read*, *Update* prestasi sendiri. |
+| **Dosen Wali** | Verifikator prestasi | *Read* dan **Verify** prestasi mahasiswa bimbingannya. |
+| **Admin** | Pengelola sistem | *Full access* ke semua fitur. |
 
 ---
 
