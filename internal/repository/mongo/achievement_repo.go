@@ -21,7 +21,6 @@ func NewAchievementMongoRepo(db *mongo.Database) *AchievementMongoRepo {
 	}
 }
 
-// ░█▀▀█ █░░ ░█▀▀█ █▀▀█ █▀▀▄ █▀▀█ █▀▀
 // CREATE
 func (r *AchievementMongoRepo) Create(ctx context.Context, ach *model.AchievementMongo) (primitive.ObjectID, error) {
 	ach.ID = primitive.NewObjectID()
@@ -34,7 +33,6 @@ func (r *AchievementMongoRepo) Create(ctx context.Context, ach *model.Achievemen
 	return result.InsertedID.(primitive.ObjectID), nil
 }
 
-// ░█▀▀▀ █░░ █▀▀ █▀▀ ▀▀█▀▀ █▀▀
 // READ (GET BY ObjectID)
 func (r *AchievementMongoRepo) GetByID(ctx context.Context, id primitive.ObjectID) (*model.AchievementMongo, error) {
 	var ach model.AchievementMongo
@@ -47,7 +45,6 @@ func (r *AchievementMongoRepo) GetByID(ctx context.Context, id primitive.ObjectI
 	return &ach, nil
 }
 
-// ░█▀▀▀ █░░ █▀▀ █▀▀ ▀▀█▀▀ █▀▀
 // GET ALL by student (Mahasiswa)
 func (r *AchievementMongoRepo) GetByStudent(ctx context.Context, studentID string) ([]model.AchievementMongo, error) {
 	cursor, err := r.Collection.Find(ctx, bson.M{"student_id": studentID})
@@ -68,7 +65,6 @@ func (r *AchievementMongoRepo) GetByStudent(ctx context.Context, studentID strin
 	return result, nil
 }
 
-// ░█▀▀▀ █▀▀█ █░░ █▀▀ █░░ █▀▀
 // UPDATE MAIN DATA ONLY
 func (r *AchievementMongoRepo) Update(ctx context.Context, id primitive.ObjectID, ach *model.AchievementMongo) error {
 	update := bson.M{
@@ -85,7 +81,6 @@ func (r *AchievementMongoRepo) Update(ctx context.Context, id primitive.ObjectID
 	return err
 }
 
-// ░█░░█ ▀▀█▀▀ █▀▀█ █▀▀█ █▄░█ █▀▀
 // DELETE
 // SOFT DELETE (recommended by SRS)
 func (r *AchievementMongoRepo) SoftDelete(ctx context.Context, id primitive.ObjectID) error {
